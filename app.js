@@ -9,6 +9,7 @@ const img3 = document.getElementById("img3");
 const img4 = document.getElementById("img4");
 const img5 = document.getElementById("img5");
 const img6 = document.getElementById("img6");
+
 let percentage = undefined;
 
 function stockHandler() {
@@ -45,7 +46,7 @@ function stockHandler() {
     img4.classList.add("off");
     img5.classList.add("off");
     img6.classList.add("off");
-    message = "Stay Strong, Be careful now on";
+    message = "Stay Strong !!";
   } else if (percentage < 0) {
     img1.classList.add("off");
     img2.classList.add("off");
@@ -79,21 +80,21 @@ function stockHandler() {
     img6.classList.remove("off");
     message = "Going To Moon !!!";
   }
-  console.log(percentage);
+
   if (buyPrice > 0 && stockQty > 0 && currentPrice > 0) {
     //if all fileds are filled and more than 0 then show result
-    result.innerHTML = ` <div id="ans"><hr class="hr-tag" />
-    <h2>${message}</h2>
-    <ul class="result-ul">
-        <li>Investment is : ${investment.toFixed(2)}</li>
-        <li>${amount >= investment ? "Profit" : "Loss"} is : ${total.toFixed(
-      2
-    )}</li>
-        <li>Amount : ${amount.toFixed(2)}</li>
-        <li>${amount >= investment ? "Gain" : "Lose"}: ${percentage.toFixed(
-      2
-    )}</li>
-    </ul></div>`;
+    result.innerHTML = ` 
+    <div id="ans">
+        <h2>${message}</h2>
+        <ul class="result-ul">
+         <li>Investment is : ${investment.toFixed(2)}</li>
+            <li>${
+              amount >= investment ? "Profit" : "Loss"
+            } is : ${total.toFixed(2)}</li>
+            <li>Amount : ${amount.toFixed(2)}</li>
+             <li> Percentage: ${percentage.toFixed(2)}%</li>
+         </ul
+    </div>`;
   } else {
     img1.classList.remove("off");
     img2.classList.add("off");
@@ -107,3 +108,23 @@ function stockHandler() {
 
 //Events
 button.addEventListener("click", stockHandler);
+input3.addEventListener("keyup", function (event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    stockHandler();
+  }
+});
+input2.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    stockHandler();
+  }
+});
+input1.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    stockHandler();
+  }
+});
