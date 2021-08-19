@@ -87,6 +87,7 @@ button:hover {
   outline: none;
 }
 img {
+  width: 100%;
   height: 80vh;
   opacity: 0.75;
   position: absolute;
@@ -103,7 +104,12 @@ img {
 .output {
   position: relative;
 }
-.result {
-  color: var(--dark-color);
-  background-color: rgba(255, 255, 240, 0.342);
+#result {
+  position: absolute;
+  top: 30;
+  left: 0;
+  background-color: rgba(255, 255, 240, 0.623);
+  width: 45vw;
+  color: black;
+  border-radius: 1rem;
 }
