@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700&family=Poppins&display=swap");
 :root {
-  --primary-color: rgba(255, 0, 0, 0.418);
-  --secondary-color: #fdf8f3;
+  --primary-color: #f3180078;
+  --secondary-color: rgba(255, 255, 255, 0.397);
   --dark-color: #111;
 }
 html {
@@ -18,13 +18,17 @@ body {
   font-family: "Poppins", sans-serif;
 }
 .main {
+  display: flex;
+  flex-direction: row;
   margin: 0%;
   padding: 0%;
   border: none;
+  justify-content: center;
 }
 
 h1 {
-  font-weight: 800;
+  font-size: 2rem;
+  font-weight: 1000;
   letter-spacing: 3px;
   color: var(--primary-color);
   margin: 0%;
@@ -36,24 +40,29 @@ section {
   flex-direction: column;
   align-items: center;
   text-align: left;
+  width: 45vw;
+  height: 100vh;
+  justify-content: center;
 }
 label {
   text-decoration: none;
   text-align: left;
-  padding: 10px;
-  color: black;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  color: var(--dark-color);
+  border-bottom: solid 2px;
+  border-bottom-color: black;
 }
 
 input {
-  width: 30vw;
+  width: 70%;
   text-align: left;
-  font-size: 1.2rem;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.397);
+  padding: 0.5rem;
+  background: var(--secondary-color);
   border: none;
   outline: none;
   border-radius: 10px;
-  color: var(--primary-color);
+  color: var(--dark-color);
   letter-spacing: 4px;
 }
 
@@ -63,15 +72,38 @@ button {
   border-radius: 15px;
   padding: 0.6rem 1.2rem;
   margin-bottom: 1rem;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
+
   color: var(--dark-color);
   transition: background 0.5s;
   outline: none;
   border: none;
   margin-top: 1rem;
+  height: 2.3rem;
 }
 
 button:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   outline: none;
+}
+img {
+  height: 80vh;
+  opacity: 0.75;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.off {
+  display: none;
+}
+
+.view {
+  display: initial;
+}
+.output {
+  position: relative;
+}
+.result {
+  color: var(--dark-color);
+  background-color: rgba(255, 255, 240, 0.342);
 }
